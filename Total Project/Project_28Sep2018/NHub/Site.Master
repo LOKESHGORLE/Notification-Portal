@@ -69,7 +69,7 @@
                         <li><a runat="server" href="~/">Dashboards</a></li>
                             <%if (Context.User.IsInRole("Super Admin"))
                                 { %>
-                                <li><a runat="server" href="~/">Access</a></li>
+                                <li><a runat="server" href="~/UserAccess/UserAccess">Access</a></li>
                         <%}if (Context.User.IsInRole("ServiceLine Manager"))
                             {%>
                                 <li><a runat="server" href="~/">Approvals</a></li>

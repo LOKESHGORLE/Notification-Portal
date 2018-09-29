@@ -100,3 +100,5 @@ D:\Total Project\Project_28Sep2018\NHub\obj\Debug\NHub.csproj.CoreCompileInputs.
 D:\Total Project\Project_28Sep2018\NHub\obj\Debug\NHub.csproj.CopyComplete
 D:\Total Project\Project_28Sep2018\NHub\obj\Debug\NHub.dll
 D:\Total Project\Project_28Sep2018\NHub\obj\Debug\NHub.pdb
+D:\Total Project\Project_28Sep2018\NHub\bin\NHubDAL.dll
+D:\Total Project\Project_28Sep2018\NHub\bin\NHubDAL.pdb

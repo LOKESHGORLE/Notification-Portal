@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NHubDAL.Model
+namespace NHubDAL.Access
 {
-   public  class SourcesModel
+    public class AccessEdit
     {
-        public string Name;
-        public int Id;
+        DalAccess access = new DalAccess();
+
     }
 }

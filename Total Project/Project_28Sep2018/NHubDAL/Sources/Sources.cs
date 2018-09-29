@@ -11,14 +11,14 @@ namespace NHubDAL.Sources
 {
     public class Sources
     {
-        public List<SourcesModel> products = new List<SourcesModel>();
+        public List<SourcesModel> SourcesList = new List<SourcesModel>();
 
-        public List<SourcesModel> GetProductList(string pSearchObj, string pQueryID)
+        public List<SourcesModel> GetSources(string pSearchObj, string pQueryID)
         {
             string Search = string.IsNullOrEmpty(pSearchObj) ? "%" : pSearchObj;
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=Proj;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 string sql;
                 
@@ -39,7 +39,7 @@ namespace NHubDAL.Sources
                 {
                     while (myDataReader.Read())
                     {
-                        products.Add(new SourcesModel
+                        SourcesList.Add(new SourcesModel
                         {
                             Name = myDataReader["Name"].ToString(),
                             
@@ -47,7 +47,7 @@ namespace NHubDAL.Sources
 
                     }
                 }
-                return products;
+                return SourcesList;
 
             }
         }
@@ -55,13 +55,13 @@ namespace NHubDAL.Sources
     public class InventoryAdapter
     {
 
-        public DataTable ProdTable = new DataTable();
+        public DataTable SourcesTable = new DataTable();
         private SqlConnection connection = new SqlConnection();
 
         private SqlDataAdapter adapter;
-        private string AdapterConnStr = @"Data Source=ACUPC-208;Initial Catalog=Proj;Integrated Security=True";
+        private string AdapterConnStr = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
 
-        public DataTable GetProductTable(string pSearchName)
+        public DataTable GetSourcesTable(string pSearchName)
         {
             connection.ConnectionString = AdapterConnStr;
            
@@ -70,8 +70,8 @@ namespace NHubDAL.Sources
 
 
 
-            adapter.Fill(ProdTable);
-            return ProdTable;
+            adapter.Fill(SourcesTable);
+            return SourcesTable;
         }
     }
 }
