@@ -1,58 +1,64 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserHomePage.aspx.cs" Inherits="NHub.UserHomePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <table cellpadding="3" cellspacing="3" style="width: 100%; border: 2px solid #FFFFFF; border-color:brown" ;>
-        <tr style=" background-color: #000000">
-            <td class="modal-sm" style=" color:ghostwhite;  width: 154px; height: 65px">EVENT NAME</td>
-            <td style=" color:ghostwhite;height: 65px; width: 129px;">SUBSCRIBED</td>
-            <td style=" color:ghostwhite;height: 65px; width: 263px;">CHANNELS</td>
-            <td style="height: 65px; width: 130px;"></td>
-            <td style="height: 65px"></td>
-        </tr>
-        <tr>
-            <td class="modal-sm" style= "color:ghostwhite; width: 154px; height: 122px ;border-color:brown"></td>
-            <td style="height: 122px; width: 129px;border-color:brown ">
-                <asp:CheckBoxList ID="CheckBoxList3" runat="server">
-                    <asp:ListItem>ON</asp:ListItem>
-                    <asp:ListItem>OFF</asp:ListItem>
-                </asp:CheckBoxList>
-            </td>
-            <td style="height: 122px; width: 263px; border-color:brown">
-                <asp:CheckBoxList ID="CheckBoxList1"  runat="server">
-                    <asp:ListItem>INTRANET</asp:ListItem>
-                    <asp:ListItem>EMAILS</asp:ListItem>
-                    <asp:ListItem>Una Bot</asp:ListItem>
-                    <asp:ListItem>SMS</asp:ListItem>
-                </asp:CheckBoxList>
-            </td>
-            <td style="height: 122px; width: 130px;">
-                <asp:Button ID="Button1" runat="server" Text="UPDATE" BorderStyle="Double" BackColor="#ffffff" Font-Size="Large" />
-            </td>
-            <td style="height: 122px"></td>
-        </tr>
-        <tr>
-            <td class="modal-sm" style=" color:ghostwhite; width: 154px; height: 120px"></td>
-            <td style="height: 120px; width: 129px;">
-                <asp:CheckBoxList ID="CheckBoxList4" runat="server">
-                    <asp:ListItem>ON</asp:ListItem>
-                    <asp:ListItem>OFF</asp:ListItem>
-                </asp:CheckBoxList>
-            </td>
-            <td style="height: 120px; width: 263px;">
-                <asp:CheckBoxList ID="CheckBoxList2" runat="server">
-                    <asp:ListItem>INTRANET</asp:ListItem>
-                    <asp:ListItem>EMAILS</asp:ListItem>
-                    <asp:ListItem>Una Bot</asp:ListItem>
-                    <asp:ListItem>SMS</asp:ListItem>
-                </asp:CheckBoxList>
-            </td>
-            <td style="height: 120px; width: 130px;">
-                <asp:Button ID="Button2" runat="server" Text="UPDATE" BorderStyle="Double" BackColor="#ffffff" Font-Size="Large" />
-            </td>
-            <td style="height: 120px">
-                <asp:HyperLink ID="HyperLink1" runat="server" >SEEMORE</asp:HyperLink>
-            </td>
-        </tr>
-    </table>
+   
+
+    <p>
+        <br />
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+    <p>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="2" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="2" Height="253px" Width="770px" >
+            <Columns>
+                <asp:BoundField DataField="Name" HeaderText="Event" SortExpression="Name" />
+<asp:TemplateField HeaderText="Subscription"><ItemTemplate>
+                        <asp:CheckBox ID="SubscribedYes" runat="server" Text="Yes"/>
+                        <asp:CheckBox ID="SubscribedNo" runat="server" Text="No"/>
+                    
+</ItemTemplate>
+</asp:TemplateField>
+<asp:TemplateField HeaderText="Channels">
+    <ItemTemplate>
+                        <asp:CheckBox ID="ChannelInteranet" runat="server" Text="Intranet"/>
+                        <asp:CheckBox ID="ChannelEmail" runat="server" Text="Email"/>
+                        <asp:CheckBox ID="ChannelUnaBot" runat="server" Text="Una bot"/>
+                        <asp:CheckBox ID="ChannelSms" runat="server" Text="Sms"/>
+                    
+</ItemTemplate>
+</asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                       
+       <asp:BoundField DataField="Name" HeaderText="Eventid" SortExpression="Name" />
+</ItemTemplate>
+</asp:TemplateField>
+<asp:TemplateField><ItemTemplate>
+                       
+  
+    <asp:HyperLink ID="UpdateButton" NavigateUrl='<%# Eval("Id","gjdfhlss.aspx?EventId={0}")%>' runat="server">Update</asp:HyperLink>
+</ItemTemplate>
+</asp:TemplateField>
+            </Columns> 
+            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+            <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+            <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#594B9C" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#33276A" />
+        </asp:GridView>
+    </p>
+
+   
 
 </asp:Content>

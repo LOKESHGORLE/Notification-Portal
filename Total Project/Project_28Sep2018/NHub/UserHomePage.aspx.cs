@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NHubDAL.Users;
+using Microsoft.AspNet.Identity;
 
 namespace NHub
 {
@@ -11,7 +13,22 @@ namespace NHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            UserHomeEvents UserEvents = new UserHomeEvents();
+            GridView1.DataSource = UserEvents.GetEventsTable(Context.User.Identity.GetUserId());
+           
+            GridView1.DataBind();
+        }
+
+        protected void UserEventsGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
