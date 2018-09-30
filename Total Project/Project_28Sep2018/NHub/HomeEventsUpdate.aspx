@@ -17,13 +17,13 @@
             <%if (Request.QueryString["Act"] == "Sub")
                 { %>
             <asp:Label ID="ConfirmMsg" runat="server" Text="ConfirmMsg"></asp:Label><%}
-          if (Request.QueryString["Act"] == "UnSub") %>
+          if (Request.QueryString["Act"] == "UnSub")%>
             <asp:Label ID="UnSubMsg" runat="server" Text="Label"></asp:Label><%} %><br />
             <asp:CheckBoxList ID="ChannelCheckBoxList" runat="server">
             </asp:CheckBoxList>
             <br />
             <br />
-            <%if (Request.QueryString["Act"] == "Sub")
+            <%if(Request.QueryString["Act"] == "Sub")
                 { %> <asp:Button ID="Subscribe" runat="server" OnClick="Subscribe_Click" Text="Subscribe" /><%}
           if (Request.QueryString["Act"] == "UnSub") %>
 &nbsp;&nbsp;

@@ -10,6 +10,7 @@ namespace NHub
 {
     public partial class HomeEventsUpdate : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string Act = Request.QueryString["Act"];
@@ -31,11 +32,12 @@ namespace NHub
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect(~/UHE1.aspx);
         }
 
         protected void Subscribe_Click(object sender, EventArgs e)
         {
+            string EvId = Request.QueryString["EventId"];
 
         }
 
