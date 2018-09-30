@@ -31,13 +31,22 @@ namespace NHub {
         protected global::System.Web.UI.WebControls.Label ConfirmMsg;
         
         /// <summary>
-        /// Confirm control.
+        /// Subscribe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Confirm;
+        protected global::System.Web.UI.WebControls.Button Subscribe;
+        
+        /// <summary>
+        /// Unsubscribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Unsubscribe;
         
         /// <summary>
         /// Cancel control.

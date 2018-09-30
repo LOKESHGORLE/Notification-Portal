@@ -19,6 +19,7 @@ namespace NHub
            
             GridView1.DataBind();
            
+           
         }
 
         protected void UserEventsGrid_SelectedIndexChanged(object sender, EventArgs e)
