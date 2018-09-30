@@ -27,6 +27,7 @@
 </asp:TemplateField>
 <asp:TemplateField HeaderText="Channels">
     <ItemTemplate>
+        <asp:CheckBoxList ID="ChannelCheckBoxList" runat="server"></asp:CheckBoxList>
                         <asp:CheckBox ID="ChannelInteranet" runat="server" Text="Intranet"/>
                         <asp:CheckBox ID="ChannelEmail" runat="server" Text="Email"/>
                         <asp:CheckBox ID="ChannelUnaBot" runat="server" Text="Una bot"/>
@@ -34,12 +35,7 @@
                     
 </ItemTemplate>
 </asp:TemplateField>
-                <asp:TemplateField>
-                    <ItemTemplate>
-                       
-       <asp:BoundField DataField="Name" HeaderText="Eventid" SortExpression="Name" />
-</ItemTemplate>
-</asp:TemplateField>
+                
 <asp:TemplateField><ItemTemplate>
                        
   

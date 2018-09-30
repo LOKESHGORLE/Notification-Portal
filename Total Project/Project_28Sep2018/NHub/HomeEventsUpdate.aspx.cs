@@ -12,6 +12,18 @@ namespace NHub
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            ConfirmMsg.Text = "Do you want to Update?";
+
+        }
+
+        protected void Confirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Cancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
