@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NHubDAL.Users;
 
 namespace NHub
 {
@@ -11,17 +12,34 @@ namespace NHub
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string Act = Request.QueryString["Act"];
+            string EvId = Request.QueryString["EventId"];
 
             ConfirmMsg.Text = "Do you want to Update?";
+            UserHomeEvents uh = new UserHomeEvents();
+            uh.GetEventChannels(EvId);
+
+            ChannelCheckBoxList.DataSource = uh.EventChannelTab;
+            ChannelCheckBoxList.DataTextField = "Name";
+            ChannelCheckBoxList.DataValueField = "Id";
+            ChannelCheckBoxList.DataBind();
+
 
         }
 
-        protected void Confirm_Click(object sender, EventArgs e)
+        
+
+        protected void Cancel_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void Cancel_Click(object sender, EventArgs e)
+        protected void Subscribe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Unsubscribe_Click(object sender, EventArgs e)
         {
 
         }

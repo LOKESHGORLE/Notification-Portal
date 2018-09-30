@@ -39,13 +39,13 @@ namespace NHub
                 TableCell Cell2 = new TableCell();
                 HyperLink hyp1 = new HyperLink();
                 hyp1.Text = "Subscribe";
-                hyp1.NavigateUrl = "~/HomeEventsUpdate?Act=Sub&&EventId=" + data[0].ToString();
+                hyp1.NavigateUrl = "~/HomeEventsUpdate?Act=Sub&&EventId=" + data[2].ToString();
                 Cell2.Controls.Add(hyp1);
                 Cell2.Width = 150;
                 TableCell Cell3 = new TableCell();
                 HyperLink hyp2 = new HyperLink();
                 hyp2.Text = "UnSubscribe";
-                hyp2.NavigateUrl = "~/HomeEventsUpdate?Act=UnSub&&EventId=" + data[0].ToString();
+                hyp2.NavigateUrl = "~/HomeEventsUpdate?Act=UnSub&&EventId=" + data[2].ToString();
                 Cell3.Controls.Add(hyp2);
                 Cell3.Width = 150;
 

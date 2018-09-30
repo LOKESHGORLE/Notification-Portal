@@ -14,12 +14,21 @@
 <body>
     <form id="form1" runat="server">
         <div class="auto-style1">
-            <asp:Label ID="ConfirmMsg" runat="server" Text="ConfirmMsg"></asp:Label>
+            <%if (Request.QueryString["Act"] == "Sub")
+                { %>
+            <asp:Label ID="ConfirmMsg" runat="server" Text="ConfirmMsg"></asp:Label><%}
+          if (Request.QueryString["Act"] == "UnSub") %>
+            <asp:Label ID="UnSubMsg" runat="server" Text="Label"></asp:Label><%} %><br />
+            <asp:CheckBoxList ID="ChannelCheckBoxList" runat="server">
+            </asp:CheckBoxList>
             <br />
             <br />
-            <br />
-            <asp:Button ID="Confirm" runat="server" OnClick="Confirm_Click" Text="Confirm" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%if (Request.QueryString["Act"] == "Sub")
+                { %> <asp:Button ID="Subscribe" runat="server" OnClick="Subscribe_Click" Text="Subscribe" /><%}
+          if (Request.QueryString["Act"] == "UnSub") %>
+&nbsp;&nbsp;
+            <asp:Button ID="Unsubscribe" runat="server" OnClick="Unsubscribe_Click" Text="Unsubscribe" /><%} %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Cancel" runat="server" OnClick="Cancel_Click" Text="Cancel" />
         </div>
     </form>
