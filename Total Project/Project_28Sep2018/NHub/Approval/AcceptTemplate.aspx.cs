@@ -37,13 +37,13 @@ namespace NotificationHub
             repo.TempUpdate(s);
             
 
-            Response.Redirect("~/ApprovalForm.aspx");
+            Response.Redirect("~/Approval/ApprovalForm.aspx");
 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/ApprovalForm.aspx");
+            Response.Redirect("~/Approval/ApprovalForm.aspx");
         }
     }
 }

@@ -12,85 +12,92 @@ namespace NotificationHub
     {
       
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {   bool flag = true;
 
             if (!IsPostBack)
-            {
-
-                Table table1 = new Table();
-                Table table2 = new Table();
-                table1.ID = "1";
-                PlaceHolder2.Controls.Add(table1);
-
-                SourecDal repo1 = new SourecDal();
-                repo1.GetApproved();
-                //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
-                //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
-
-                for (int count = 0; count < repo1.templateslist.Count; count++)
+            {   SourecDal repo1 = new SourecDal();
+                
+                if (flag)
                 {
-                    TableRow tableRow = new TableRow();
-                    table1.Rows.Add(tableRow);
-                    TableCell tableCell = new TableCell();
-                    tableRow.Cells.Add(tableCell);
-                    Label label = new Label();
-                    label.Text = "TEMPLATE--";
-                    label.Width = 200;
-                    PlaceHolder2.Controls.Add(label);
+                    
+                    Table table1 = new Table();
+                    
+                    table1.ID = "1";
+                    PlaceHolder2.Controls.Add(table1);
 
-                    Label label1 = new Label();
-                    label1.Text = repo1.templateslist[count].TemplateName;
-                    label1.Width = 150;
-                    PlaceHolder2.Controls.Add(label1);
+                    
+                    repo1.GetApproved();
+                    //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
+                    //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
 
-                    Label label2 = new Label();
-                    label2.Text = repo1.templateslist[count].OperationManager;
-                    label2.Width = 250;
-                    PlaceHolder2.Controls.Add(label2);
+                    for (int count = 0; count < repo1.templateslist.Count; count++)
+                    {
+                        TableRow tableRow = new TableRow();
+                        table1.Rows.Add(tableRow);
+                        TableCell tableCell = new TableCell();
+                        tableRow.Cells.Add(tableCell);
+                        Label label = new Label();
+                        label.Text = "TEMPLATE--";
+                        label.Width = 150;
+                        PlaceHolder2.Controls.Add(label);
 
-                    Label label3 = new Label();
-                    label3.Text = "Accepted";
-                    label3.Width = 400;
-                    PlaceHolder2.Controls.Add(label3);
+                        Label label1 = new Label();
+                        label1.Text = repo1.templateslist[count].TemplateName;
+                        label1.Width = 250;
+                        PlaceHolder2.Controls.Add(label1);
+
+                        Label label2 = new Label();
+                        label2.Text = repo1.templateslist[count].OperationManager;
+                        label2.Width = 150;
+                        PlaceHolder2.Controls.Add(label2);
+
+                        Label label3 = new Label();
+                        label3.Text = "Accepted";
+                        label3.Width = 400;
+                        PlaceHolder2.Controls.Add(label3);
+                        flag = false;
+                    }
 
                 }
 
-
-
-                
-                table2.ID = "1";
-                PlaceHolder3.Controls.Add(table2);
-
-                //SourecDal repo = new SourecDal();
-                repo1.GetDeclined();
-                //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
-                //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
-
-                for (int count = 0; count < repo1.templateslist.Count; count++)
+                else if (flag ==true)
                 {
-                    TableRow tableRow = new TableRow();
-                    table2.Rows.Add(tableRow);
-                    TableCell tableCell = new TableCell();
-                    tableRow.Cells.Add(tableCell);
-                    Label label = new Label();
-                    label.Text = "TEMPLATE--";
-                    label.Width = 200;
-                    PlaceHolder3.Controls.Add(label);
+                    Table table2 = new Table();
+                    table2.ID = "1";
+                    PlaceHolder3.Controls.Add(table2);
 
-                    Label label1 = new Label();
-                    label1.Text = repo1.templateslist[count].TemplateName;
-                    label1.Width = 150;
-                    PlaceHolder3.Controls.Add(label1);
+                    //SourecDal repo = new SourecDal();
+                    repo1.GetDeclined();
+                    //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
+                    //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
 
-                    Label label2 = new Label();
-                    label2.Text = repo1.templateslist[count].OperationManager;
-                    label2.Width = 250;
-                    PlaceHolder3.Controls.Add(label2);
+                    for (int count = 0; count < repo1.templateslist.Count; count++)
+                    {
+                        TableRow tableRow = new TableRow();
+                        table2.Rows.Add(tableRow);
+                        TableCell tableCell = new TableCell();
+                        tableRow.Cells.Add(tableCell);
+                        Label label = new Label();
+                        label.Text = "TEMPLATE--";
+                        label.Width = 150;
+                        PlaceHolder3.Controls.Add(label);
 
-                    Label label3 = new Label();
-                    label3.Text = "Declined";
-                    label3.Width = 400;
-                    PlaceHolder3.Controls.Add(label3);
+                        Label label1 = new Label();
+                        label1.Text = repo1.templateslist[count].TemplateName;
+                        label1.Width = 250;
+                        PlaceHolder3.Controls.Add(label1);
+
+                        Label label2 = new Label();
+                        label2.Text = repo1.templateslist[count].OperationManager;
+                        label2.Width = 150;
+                        PlaceHolder3.Controls.Add(label2);
+
+                        Label label3 = new Label();
+                        label3.Text = "Declined";
+                        label3.Width = 400;
+                        PlaceHolder3.Controls.Add(label3);
+                        flag = false;
+                    }
                 }
             }
 
@@ -111,8 +118,8 @@ namespace NotificationHub
                 TableCell tableCell = new TableCell();
                 tableRow.Cells.Add(tableCell);
                 Label label = new Label();
-                label.Text = " NEW_TEMPLATE--";
-                label.Width = 200;
+                label.Text = " NEW_TEMPLATE-";
+                label.Width = 130;
                 PlaceHolder1.Controls.Add(label);
 
                 Label label1 = new Label();
@@ -122,19 +129,19 @@ namespace NotificationHub
 
                 Label label2 = new Label();
                 label2.Text = repo.templateslist[count].OperationManager;
-                label2.Width = 250;
+                label2.Width = 200;
                 PlaceHolder1.Controls.Add(label2);
 
                HyperLink hyper = new HyperLink();
                 hyper.Text = "Approve";
-                hyper.Width = 100;
-                hyper.NavigateUrl = ("~/AcceptTemplate.aspx?id=" + Convert.ToString(repo.templateslist[count].Id));
+                hyper.Width = 80;
+                hyper.NavigateUrl = ("~/Approval/AcceptTemplate.aspx?id=" + Convert.ToString(repo.templateslist[count].Id));
                 PlaceHolder1.Controls.Add(hyper);
 
                 HyperLink hyper1 = new HyperLink();
                 hyper1.Text = "Decline";
                 hyper1.Width = 400;
-                hyper1.NavigateUrl = ("~/DeclineTemplate.aspx?id=" + Convert.ToString(repo.templateslist[count].Id));
+                hyper1.NavigateUrl = ("~/Approval/DeclineTemplate.aspx?id=" + Convert.ToString(repo.templateslist[count].Id));
                 PlaceHolder1.Controls.Add(hyper1);
 
 
