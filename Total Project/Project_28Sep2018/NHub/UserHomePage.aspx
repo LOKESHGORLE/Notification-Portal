@@ -38,8 +38,9 @@
                 
 <asp:TemplateField><ItemTemplate>
                        
-  
-    <asp:HyperLink ID="UpdateButton" NavigateUrl='<%# Eval("Id","gjdfhlss.aspx?EventId={0}")%>' runat="server">Update</asp:HyperLink>
+   
+
+    <asp:HyperLink ID="UpdateButton" NavigateUrl='<%# Eval("Id","HomeEventsUpdate.aspx?EventId={0}")%>' runat="server">Update</asp:HyperLink>
 </ItemTemplate>
 </asp:TemplateField>
             </Columns> 
@@ -53,6 +54,26 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#33276A" />
         </asp:GridView>
+    </p>
+    <p>
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:CommandField ShowEditButton="True" />
+                <asp:BoundField DataField="Event_slm_subscribe_Id" HeaderText="Event_slm_subscribe_Id" SortExpression="Event_slm_subscribe_Id" />
+                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" InsertCommand="INSERT INTO MyEventsChannel(UserId, EvenetId, Channelid) VALUES ('12953313-07ff-4464-b9cf-856a96513f1a', 1, 1)" SelectCommand="SELECT evu.Event_slm_subscribe_Id, ev.Id, ev.Name FROM Event_slm_subscribe_users AS evu INNER JOIN Event_slm_subscribe AS evslm ON evu.Event_slm_subscribe_Id = evslm.Id INNER JOIN Event AS ev ON ev.Id = evslm.EventId WHERE (evu.UserId = '12953313-07ff-4464-b9cf-856a96513f1a')" UpdateCommand="UPDATE MyEventsChannel SET Channelid = 2 WHERE (UserId = '12953313-07ff-4464-b9cf-856a96513f1a') AND (EvenetId = 2)"></asp:SqlDataSource>
+    </p>
+    <p>
+        <asp:GridView ID="GridView3" runat="server" DataSourceID="SqlDataSource2">
+            <Columns>
+                <asp:BoundField />
+                <asp:CheckBoxField />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
     </p>
 
    

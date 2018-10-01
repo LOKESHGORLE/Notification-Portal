@@ -10,28 +10,27 @@ using System.Data;
 
 namespace NHub
 {
-    public partial class UHE1 : Page
+    public partial class UserEvents : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             UserHomeEvents uh = new UserHomeEvents();
             uh.GetEventsTable(Context.User.Identity.GetUserId());
 
             Table DisplayTable = new Table();
             PlaceHolder1.Controls.Add(DisplayTable);
 
-            
-            
+
+
             TableRow TabRow = new TableRow();
-         
+
             CheckBoxList ckl = new CheckBoxList();
             foreach (DataRow data in uh.UserEventsTab.Tables[1].Rows)
             {
-                
+
                 TableRow Tr = new TableRow();
                 Tr.HorizontalAlign = HorizontalAlign.Justify;
-                
+
 
                 TableCell Cell1 = new TableCell();
                 Cell1.Controls.Add(new LiteralControl(data[1].ToString()));
@@ -79,8 +78,10 @@ namespace NHub
                 //Tr.Cells.Add(Cell4);
                 DisplayTable.Rows.Add(Tr);
             }
-            
+
 
         }
+
+
     }
 }

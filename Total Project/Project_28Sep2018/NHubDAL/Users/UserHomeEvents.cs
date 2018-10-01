@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace NHubDAL.Users
 {
-   public  class UserHomeEvents
+    public class UserHomeEvents
     {
         public DataSet UserEventsTab = new DataSet();
         public DataTable EventChannelTab = new DataTable();
@@ -31,7 +31,7 @@ namespace NHubDAL.Users
             adapter = new SqlDataAdapter(sql, connection);
             adapter.Fill(UserEventsTab.Tables[0]);
 
-            string sql1 = "select ev.Id, ev.Name,evu.Event_slm_subscribe_Id from Event_slm_subscribe_users evu join Event_slm_subscribe evslm on evu.Event_slm_subscribe_Id=evslm.Id join Event ev on ev.Id = evslm.EventId where evu.UserId ='" + pSearchUserId+"'";
+            string sql1 = "select ev.Id, ev.Name,evu.Event_slm_subscribe_Id from Event_slm_subscribe_users evu join Event_slm_subscribe evslm on evu.Event_slm_subscribe_Id=evslm.Id join Event ev on ev.Id = evslm.EventId where evu.UserId ='" + pSearchUserId + "'";
             adapter = new SqlDataAdapter(sql1, connection);
 
 
@@ -41,14 +41,51 @@ namespace NHubDAL.Users
         public DataTable GetEventChannels(string pEventSlmId)
         {
             connection.ConnectionString = AdapterConnStr;
-            string sql = "select c.Id,c.Name from Event_slm_subscribe_channel essc,channel c where essc.ChannelId=c.Id and essc.Event_slm_subscribe_Id="+ pEventSlmId;
+            string sql = "select c.Id,c.Name from Event_slm_subscribe_channel essc,channel c where essc.ChannelId=c.Id and essc.Event_slm_subscribe_Id=" + pEventSlmId;
             adapter = new SqlDataAdapter(sql, connection);
-            
-               
+
+
             adapter.Fill(EventChannelTab);
             return EventChannelTab;
         }
+        public void InsertMyEventsChannel(string pUserId, string pEventId, string pChannelIds)
+        {
+            connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=IndivAuth;Integrated Security=True";
+            connection.Open();
 
+            using (SqlCommand command = new SqlCommand("PROC_InsertmyEventChannel", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                // Input param.
+                SqlParameter parUserId = new SqlParameter
+                {
+                    ParameterName = "@pUserId",
+                    SqlDbType = SqlDbType.Char,
+                    Value = pUserId,
+                    Direction = ParameterDirection.Input
+                };
+                command.Parameters.Add(parUserId);
+                SqlParameter parEventId = new SqlParameter
+                {
+                    ParameterName = "@pEventId",
+                    SqlDbType = SqlDbType.Int,
+                    Value = pEventId,
+                    Direction = ParameterDirection.Input
+                };
+                command.Parameters.Add(parEventId);
+                SqlParameter parChannelIds = new SqlParameter
+                {
+                    ParameterName = "@pChannelIds",
+                    SqlDbType = SqlDbType.Int,
+                    Value = pChannelIds,
+                    Direction = ParameterDirection.Input
+                };
+                command.Parameters.Add(parChannelIds);
+                command.ExecuteNonQuery();
 
+            }
+            connection.Close();
+
+        }
     }
 }

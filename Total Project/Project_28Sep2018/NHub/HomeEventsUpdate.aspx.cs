@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NHubDAL.Users;
+using Microsoft.AspNet.Identity;
 
 namespace NHub
 {
@@ -32,12 +33,28 @@ namespace NHub
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect(~/UHE1.aspx);
+            Response.Redirect("~/UserEvents.aspx");
         }
 
         protected void Subscribe_Click(object sender, EventArgs e)
         {
+            string UserId = Context.User.Identity.GetUserId();
             string EvId = Request.QueryString["EventId"];
+            string EvCh = "";
+            for (int CkbCount=0;CkbCount< ChannelCheckBoxList.Items.Count; CkbCount++)
+            {
+                if (ChannelCheckBoxList.Items[CkbCount].Selected)
+                {
+                    EvCh = EvCh + ChannelCheckBoxList.Items[CkbCount].Value + ",";
+                }
+            }
+            EvCh = EvCh.Substring(0, EvCh.Length - 1);
+
+
+            UserHomeEvents events = new UserHomeEvents();
+            events.InsertMyEventsChannel(UserId, EvId, EvCh);
+
+            Response.Redirect("~/UserEvents.aspx");
 
         }
 

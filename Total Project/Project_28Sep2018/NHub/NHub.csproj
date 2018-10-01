@@ -225,6 +225,7 @@
     <Content Include="UHE1.aspx" />
     <Content Include="UserAccess\UserAccess.aspx" />
     <Content Include="UserAccess\UserAccessEdit.aspx" />
+    <Content Include="UserEvents.aspx" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -430,6 +431,13 @@
     </Compile>
     <Compile Include="UserAccess\UserAccessEdit.aspx.designer.cs">
       <DependentUpon>UserAccessEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserEvents.aspx.cs">
+      <DependentUpon>UserEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserEvents.aspx.designer.cs">
+      <DependentUpon>UserEvents.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserHomePage.aspx.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>

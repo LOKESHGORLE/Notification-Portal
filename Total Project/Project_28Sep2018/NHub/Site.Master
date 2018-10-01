@@ -49,7 +49,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/UHe">Home</a></li>
+                        <li><a runat="server" href="~/UserEvents.aspx">Home</a></li>
                         <%if (Context.User.IsInRole("Super Admin"))
                             { %>
                                 <li><a runat="server" href="~/Sources">Sources</a></li>

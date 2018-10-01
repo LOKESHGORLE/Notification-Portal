@@ -18,8 +18,10 @@ namespace NHub
             GridView1.DataSource = UserEvents.GetEventsTable(Context.User.Identity.GetUserId());
            
             GridView1.DataBind();
-           
-           
+
+            
+            
+
         }
 
         protected void UserEventsGrid_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,6 +32,8 @@ namespace NHub
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //GridView1.Columns[3].
+            //GridView1.
+
         }
 
     }
