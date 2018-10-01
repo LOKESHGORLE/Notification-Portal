@@ -14,6 +14,8 @@ namespace DAL.Repository
     {
         public List<Source> Sourceslist = new List<Source>();
         public List<TemplateAccess> templateslist = new List<TemplateAccess>();
+        public List<TemplateAccess> Approvedlist = new List<TemplateAccess>();
+        public List<TemplateAccess> rejectedlist = new List<TemplateAccess>();
 
         public List<Source> GetSources()
         {
@@ -202,7 +204,7 @@ namespace DAL.Repository
                 {
                     while (sqlDataReader.Read())
                     {
-                        templateslist.Add(new TemplateAccess
+                        Approvedlist.Add(new TemplateAccess
                         {
                             Id = Convert.ToInt32(sqlDataReader["Id"].ToString()),
                             TemplateName = (sqlDataReader["Name"].ToString()),
@@ -216,7 +218,7 @@ namespace DAL.Repository
                     }
                 }
             }
-            return templateslist;
+            return Approvedlist;
 
 
 
@@ -240,7 +242,7 @@ namespace DAL.Repository
                 {
                     while (sqlDataReader.Read())
                     {
-                        templateslist.Add(new TemplateAccess
+                        rejectedlist.Add(new TemplateAccess
                         {
                             Id = Convert.ToInt32(sqlDataReader["Id"].ToString()),
                             TemplateName = (sqlDataReader["Name"].ToString()),
@@ -254,7 +256,7 @@ namespace DAL.Repository
                     }
                 }
             }
-            return templateslist;
+            return rejectedlist;
 
 
 

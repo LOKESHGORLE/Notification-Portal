@@ -12,14 +12,11 @@ namespace NotificationHub
     {
       
         protected void Page_Load(object sender, EventArgs e)
-        {   bool flag = true;
-
-            if (!IsPostBack)
-            {   SourecDal repo1 = new SourecDal();
+        {
+            bool flag = true;
+            SourecDal repo1 = new SourecDal();
                 
-                if (flag)
-                {
-                    
+                  
                     Table table1 = new Table();
                     
                     table1.ID = "1";
@@ -30,7 +27,7 @@ namespace NotificationHub
                     //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
                     //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
 
-                    for (int count = 0; count < repo1.templateslist.Count; count++)
+                    for (int count = 0; count < repo1.Approvedlist.Count; count++)
                     {
                         TableRow tableRow = new TableRow();
                         table1.Rows.Add(tableRow);
@@ -42,12 +39,12 @@ namespace NotificationHub
                         PlaceHolder2.Controls.Add(label);
 
                         Label label1 = new Label();
-                        label1.Text = repo1.templateslist[count].TemplateName;
+                        label1.Text = repo1.Approvedlist[count].TemplateName;
                         label1.Width = 250;
                         PlaceHolder2.Controls.Add(label1);
 
                         Label label2 = new Label();
-                        label2.Text = repo1.templateslist[count].OperationManager;
+                        label2.Text = repo1.Approvedlist[count].OperationManager;
                         label2.Width = 150;
                         PlaceHolder2.Controls.Add(label2);
 
@@ -58,20 +55,15 @@ namespace NotificationHub
                         flag = false;
                     }
 
-                }
-
-                else if (flag ==true)
-                {
-                    Table table2 = new Table();
+                   Table table2 = new Table();
                     table2.ID = "1";
                     PlaceHolder3.Controls.Add(table2);
 
-                    //SourecDal repo = new SourecDal();
+                  
                     repo1.GetDeclined();
-                    //HyperLink1.NavigateUrl = ("~/ApprovedTemplates.aspx");
-                    //HyperLink2.NavigateUrl = ("~/DeclinedForm.aspx");
+                  
 
-                    for (int count = 0; count < repo1.templateslist.Count; count++)
+                    for (int count = 0; count < repo1.rejectedlist.Count; count++)
                     {
                         TableRow tableRow = new TableRow();
                         table2.Rows.Add(tableRow);
@@ -83,12 +75,12 @@ namespace NotificationHub
                         PlaceHolder3.Controls.Add(label);
 
                         Label label1 = new Label();
-                        label1.Text = repo1.templateslist[count].TemplateName;
+                        label1.Text = repo1.rejectedlist[count].TemplateName;
                         label1.Width = 250;
                         PlaceHolder3.Controls.Add(label1);
 
                         Label label2 = new Label();
-                        label2.Text = repo1.templateslist[count].OperationManager;
+                        label2.Text = repo1.rejectedlist[count].OperationManager;
                         label2.Width = 150;
                         PlaceHolder3.Controls.Add(label2);
 
@@ -98,8 +90,8 @@ namespace NotificationHub
                         PlaceHolder3.Controls.Add(label3);
                         flag = false;
                     }
-                }
-            }
+                
+            
 
             Table table3 = new Table();
             table3.ID = "1";
