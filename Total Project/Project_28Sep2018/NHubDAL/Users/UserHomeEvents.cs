@@ -48,41 +48,69 @@ namespace NHubDAL.Users
             adapter.Fill(EventChannelTab);
             return EventChannelTab;
         }
-        public void InsertMyEventsChannel(string pUserId, string pEventId, string pChannelIds)
+        public void InsertMyEventsChannel(string pUserId, int pEventId, string pChannelIds)
         {
-            connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=IndivAuth;Integrated Security=True";
+            connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
             connection.Open();
 
-            using (SqlCommand command = new SqlCommand("PROC_InsertmyEventChannel", connection))
+            using (SqlCommand command1 = new SqlCommand("PROC_DeletemyEventChannel", connection))
             {
-                command.CommandType = CommandType.StoredProcedure;
-                // Input param.
-                SqlParameter parUserId = new SqlParameter
+                command1.CommandType = CommandType.StoredProcedure;
                 {
-                    ParameterName = "@pUserId",
-                    SqlDbType = SqlDbType.Char,
-                    Value = pUserId,
-                    Direction = ParameterDirection.Input
-                };
-                command.Parameters.Add(parUserId);
-                SqlParameter parEventId = new SqlParameter
+                    SqlParameter parUserId = new SqlParameter
+                    {
+                        ParameterName = "@pUserId",
+                        SqlDbType = SqlDbType.Char,
+                        Value = pUserId,
+                        Direction = ParameterDirection.Input
+                    };
+                    command1.Parameters.Add(parUserId);
+                    SqlParameter parEventId = new SqlParameter
+                    {
+                        ParameterName = "@pEventId",
+                        SqlDbType = SqlDbType.Int,
+                        Value = pEventId,
+                        Direction = ParameterDirection.Input
+                    };
+                    command1.Parameters.Add(parEventId);
+                    command1.ExecuteNonQuery();
+                }
+            }
+                string[] ChIds = pChannelIds.Split(',');
+            foreach (string ch in ChIds)
+            {
+                int id = Convert.ToInt32(ch);
+                using (SqlCommand command = new SqlCommand("PROC_InsertmyEventChannel", connection))
                 {
-                    ParameterName = "@pEventId",
-                    SqlDbType = SqlDbType.Int,
-                    Value = pEventId,
-                    Direction = ParameterDirection.Input
-                };
-                command.Parameters.Add(parEventId);
-                SqlParameter parChannelIds = new SqlParameter
-                {
-                    ParameterName = "@pChannelIds",
-                    SqlDbType = SqlDbType.Int,
-                    Value = pChannelIds,
-                    Direction = ParameterDirection.Input
-                };
-                command.Parameters.Add(parChannelIds);
-                command.ExecuteNonQuery();
+                    command.CommandType = CommandType.StoredProcedure;
+                    // Input param.
+                    SqlParameter parUserId = new SqlParameter
+                    {
+                        ParameterName = "@pUserId",
+                        SqlDbType = SqlDbType.Char,
+                        Value = pUserId,
+                        Direction = ParameterDirection.Input
+                    };
+                    command.Parameters.Add(parUserId);
+                    SqlParameter parEventId = new SqlParameter
+                    {
+                        ParameterName = "@pEventId",
+                        SqlDbType = SqlDbType.Int,
+                        Value = pEventId,
+                        Direction = ParameterDirection.Input
+                    };
+                    command.Parameters.Add(parEventId);
+                    SqlParameter parChannelIds = new SqlParameter
+                    {
+                        ParameterName = "@pChannelId",
+                        SqlDbType = SqlDbType.Int,
+                        Value = id,
+                        Direction = ParameterDirection.Input
+                    };
+                    command.Parameters.Add(parChannelIds);
+                    command.ExecuteNonQuery();
 
+                }
             }
             connection.Close();
 

@@ -21,11 +21,15 @@ namespace NHub
             UserHomeEvents uh = new UserHomeEvents();
             uh.GetEventChannels(EvId);
 
-            ChannelCheckBoxList.DataSource = uh.EventChannelTab;
-            ChannelCheckBoxList.DataTextField = "Name";
-            ChannelCheckBoxList.DataValueField = "Id";
-            ChannelCheckBoxList.DataBind();
+            if (!IsPostBack)
+            {
 
+
+                ChannelCheckBoxList.DataSource = uh.EventChannelTab;
+                ChannelCheckBoxList.DataTextField = "Name";
+                ChannelCheckBoxList.DataValueField = "Id";
+                ChannelCheckBoxList.DataBind();
+            }
 
         }
 
@@ -39,7 +43,7 @@ namespace NHub
         protected void Subscribe_Click(object sender, EventArgs e)
         {
             string UserId = Context.User.Identity.GetUserId();
-            string EvId = Request.QueryString["EventId"];
+            int EvId = Convert.ToInt32(Request.QueryString["EventId"]);
             string EvCh = "";
             for (int CkbCount=0;CkbCount< ChannelCheckBoxList.Items.Count; CkbCount++)
             {

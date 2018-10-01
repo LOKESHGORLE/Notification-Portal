@@ -222,7 +222,6 @@
     <Content Include="Site.Master" />
     <Content Include="SLM Notifications\SLMNotifications.aspx" />
     <Content Include="Sources.aspx" />
-    <Content Include="UHE1.aspx" />
     <Content Include="UserAccess\UserAccess.aspx" />
     <Content Include="UserAccess\UserAccessEdit.aspx" />
     <Content Include="UserEvents.aspx" />
@@ -411,13 +410,6 @@
       <DependentUpon>Sources.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="UHE1.aspx.cs">
-      <DependentUpon>UHE1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UHE1.aspx.designer.cs">
-      <DependentUpon>UHE1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserAccess\UserAccess.aspx.cs">
       <DependentUpon>UserAccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

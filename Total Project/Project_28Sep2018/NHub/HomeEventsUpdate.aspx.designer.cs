@@ -22,6 +22,24 @@ namespace NHub {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// HintMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HintMsg;
+        
+        /// <summary>
+        /// ChannelCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList ChannelCheckBoxList;
+        
+        /// <summary>
         /// ConfirmMsg control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace NHub {
         protected global::System.Web.UI.WebControls.Label UnSubMsg;
         
         /// <summary>
+        /// Subscribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Subscribe;
+        
+        /// <summary>
         /// Unsubscribe control.
         /// </summary>
         /// <remarks>
@@ -47,15 +74,6 @@ namespace NHub {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Unsubscribe;
-        
-        /// <summary>
-        /// ChannelCheckBoxList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ChannelCheckBoxList;
         
         /// <summary>
         /// Cancel control.
