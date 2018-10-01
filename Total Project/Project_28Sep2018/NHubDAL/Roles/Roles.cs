@@ -31,10 +31,23 @@ namespace NHubDAL.Roles
         {
             connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
             connection.Open();
-           
 
+            using (SqlCommand command = new SqlCommand("Proc_DeleteRoles", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                // Input param.
+                SqlParameter parUserId = new SqlParameter
+                {
+                    ParameterName = "@pUserId",
+                    SqlDbType = SqlDbType.Char,
+                    Value = pUserId,
+                    Direction = ParameterDirection.Input
+                };
+                command.Parameters.Add(parUserId);
+                command.ExecuteNonQuery();
+            }
 
-            using (SqlCommand command = new SqlCommand("Proc_AssignRoles", connection))
+                using (SqlCommand command = new SqlCommand("Proc_AssignRoles", connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
                 // Input param.
