@@ -9,3 +9,4 @@ D:\Notification-Portal\Total Project\Project_28Sep2018\NHubDAL\bin\Debug\NHubDAL
 D:\Notification-Portal\Total Project\Project_28Sep2018\NHubDAL\obj\Debug\NHubDAL.csproj.CoreCompileInputs.cache
 D:\Notification-Portal\Total Project\Project_28Sep2018\NHubDAL\obj\Debug\NHubDAL.dll
 D:\Notification-Portal\Total Project\Project_28Sep2018\NHubDAL\obj\Debug\NHubDAL.pdb
+D:\Notification-Portal\Total Project\Project_28Sep2018\NHubDAL\obj\Debug\NHubDAL.csprojAssemblyReference.cache

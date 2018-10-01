@@ -45,6 +45,7 @@
     <Compile Include="Access\Access.cs" />
     <Compile Include="Access\AccessEdit.cs" />
     <Compile Include="Model\SourcesModel.cs" />
+    <Compile Include="Notifications\DALnotifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\Roles.cs" />
     <Compile Include="SourceAndApproval\Source.cs" />
