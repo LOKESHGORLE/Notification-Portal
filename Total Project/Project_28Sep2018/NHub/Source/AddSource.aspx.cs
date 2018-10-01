@@ -34,7 +34,7 @@ namespace NotificationHub
             else {
                 sourcerepo.Entersource(TextBox1.Text + "\n");
 
-                Response.Redirect("SourceHome.aspx");
+                Response.Redirect("~/Source/SourceHome.aspx");
             }
 
 
@@ -44,7 +44,7 @@ namespace NotificationHub
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SourceHome.aspx");
+            Response.Redirect("~/Source/SourceHome.aspx");
         }
     }
 }

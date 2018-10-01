@@ -34,12 +34,12 @@ namespace NotificationHub
                 HyperLink Edit = new HyperLink();
                 PlaceHolder1.Controls.Add(Edit);
                 Edit.Text = "EDIT";
-                Edit.NavigateUrl = ("~/EditSource.aspx?id=" + Convert.ToString(sourecDal.Sourceslist[count].Id));
+                Edit.NavigateUrl = ("~/Source/EditSource.aspx?id=" + Convert.ToString(sourecDal.Sourceslist[count].Id));
                 Edit.Width = 150;
                 HyperLink Delete = new HyperLink();
                 PlaceHolder1.Controls.Add(Delete);
                 Delete.Text = "DELETE" + "<br/>" + "<br/>";
-                Delete.NavigateUrl = ("~/DeleteSource.aspx?id=" + Convert.ToString(sourecDal.Sourceslist[count].Id));
+                Delete.NavigateUrl = ("~/Source/DeleteSource.aspx?id=" + Convert.ToString(sourecDal.Sourceslist[count].Id));
 
 
                 //Delete.Width = 600;
@@ -52,7 +52,7 @@ namespace NotificationHub
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddSource.aspx");
+            Response.Redirect("~/Source/AddSource.aspx");
         }
     }
 }

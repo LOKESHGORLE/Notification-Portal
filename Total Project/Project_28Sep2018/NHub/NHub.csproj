@@ -170,6 +170,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AddSource.aspx" />
+    <Content Include="Approval\AcceptTemplate.aspx" />
+    <Content Include="Approval\ApprovalForm.aspx" />
+    <Content Include="Approval\DeclineTemplate.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -222,6 +225,10 @@
     <Content Include="Site.Master" />
     <Content Include="SLM Notifications\SLMNotifications.aspx" />
     <Content Include="Sources.aspx" />
+    <Content Include="Source\AddSource.aspx" />
+    <Content Include="Source\DeleteSource.aspx" />
+    <Content Include="Source\EditSource.aspx" />
+    <Content Include="Source\SourceHome.aspx" />
     <Content Include="UserAccess\UserAccess.aspx" />
     <Content Include="UserAccess\UserAccessEdit.aspx" />
     <Content Include="UserEvents.aspx" />
@@ -344,6 +351,27 @@
     <Compile Include="AddSource.aspx.designer.cs">
       <DependentUpon>AddSource.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Approval\AcceptTemplate.aspx.cs">
+      <DependentUpon>AcceptTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approval\AcceptTemplate.aspx.designer.cs">
+      <DependentUpon>AcceptTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approval\ApprovalForm.aspx.cs">
+      <DependentUpon>ApprovalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approval\ApprovalForm.aspx.designer.cs">
+      <DependentUpon>ApprovalForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approval\DeclineTemplate.aspx.cs">
+      <DependentUpon>DeclineTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approval\DeclineTemplate.aspx.designer.cs">
+      <DependentUpon>DeclineTemplate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -409,6 +437,34 @@
     <Compile Include="Sources.aspx.designer.cs">
       <DependentUpon>Sources.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Source\AddSource.aspx.cs">
+      <DependentUpon>AddSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\AddSource.aspx.designer.cs">
+      <DependentUpon>AddSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\DeleteSource.aspx.cs">
+      <DependentUpon>DeleteSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\DeleteSource.aspx.designer.cs">
+      <DependentUpon>DeleteSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\EditSource.aspx.cs">
+      <DependentUpon>EditSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\EditSource.aspx.designer.cs">
+      <DependentUpon>EditSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\SourceHome.aspx.cs">
+      <DependentUpon>SourceHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\SourceHome.aspx.designer.cs">
+      <DependentUpon>SourceHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UserAccess\UserAccess.aspx.cs">
       <DependentUpon>UserAccess.aspx</DependentUpon>
@@ -448,6 +504,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

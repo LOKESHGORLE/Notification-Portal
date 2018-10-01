@@ -19,7 +19,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source =.; Initial Catalog = NHUB; Integrated Security = True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand("SourceProc", connection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -58,7 +58,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source=.;Initial Catalog=NHUB;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand("insertproc", connection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -74,7 +74,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source=.;Initial Catalog=NHUB;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
                 SqlCommand sqlCommand = new SqlCommand("delproc", connection);
@@ -94,7 +94,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source=.;Initial Catalog=NHUB;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
                 SqlCommand sqlCommand = new SqlCommand("EditProc", connection);
@@ -117,7 +117,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source =.; Initial Catalog = NHUB; Integrated Security = True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand("DisplayAccessproc", connection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -152,7 +152,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source=.;Initial Catalog=NHUB;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
                 SqlCommand sqlCommand = new SqlCommand("UpdateTemp", connection);
@@ -172,7 +172,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source=.;Initial Catalog=NHUB;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
                 SqlCommand sqlCommand = new SqlCommand("UpdateTemp", connection);
@@ -193,7 +193,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source =.; Initial Catalog = NHUB; Integrated Security = True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand("DisplayApproved", connection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
@@ -231,7 +231,7 @@ namespace DAL.Repository
         {
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString = "Data Source =.; Initial Catalog = NHUB; Integrated Security = True";
+                connection.ConnectionString = @"Data Source=ACUPC-208;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand("DisplayDeclined", connection);
                 sqlCommand.CommandType = CommandType.StoredProcedure;

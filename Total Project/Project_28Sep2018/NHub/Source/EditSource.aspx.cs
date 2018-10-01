@@ -38,7 +38,7 @@ namespace NotificationHub
             int s = Convert.ToInt32(Request.QueryString["id"]);
             SourecDal sourerepo = new SourecDal();
             sourerepo.Edit(s, TextBox1.Text);
-            Response.Redirect("SourceHome.aspx");
+            Response.Redirect("~/Source/SourceHome.aspx");
         }
     }
 }

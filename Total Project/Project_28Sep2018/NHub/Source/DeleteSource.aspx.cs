@@ -51,12 +51,12 @@ namespace NotificationHub
             //Label1.Text = sourerepo.Sourceslist[s].Name;
 
 
-            Response.Redirect("SourceHome.aspx");
+            Response.Redirect("~/Source/SourceHome.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SourceHome.aspx");
+            Response.Redirect("~/Source/SourceHome.aspx");
         }
     }
 }

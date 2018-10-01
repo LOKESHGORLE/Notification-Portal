@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,10 @@
     <Compile Include="Model\SourcesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\Roles.cs" />
+    <Compile Include="SourceAndApproval\Source.cs" />
     <Compile Include="Sources\Sources.cs" />
+    <Compile Include="SourceAndApproval\SourecDal.cs" />
+    <Compile Include="SourceAndApproval\TemplateAccess.cs" />
     <Compile Include="Users\UserHomeEvents.cs" />
   </ItemGroup>
   <ItemGroup />

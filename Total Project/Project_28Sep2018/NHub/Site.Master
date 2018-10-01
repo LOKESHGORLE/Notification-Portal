@@ -52,7 +52,7 @@
                         <li><a runat="server" href="~/UserEvents.aspx">Home</a></li>
                         <%if (Context.User.IsInRole("Super Admin"))
                             { %>
-                                <li><a runat="server" href="~/Sources">Sources</a></li>
+                                <li><a runat="server" href="~/Source/SourceHome.aspx">Sources</a></li>
                         <%}if (Context.User.IsInRole("Super Admin"))
                             {%>
                                 <li><a runat="server"  id="SAServiceLines" href="~/SAServiceLines">Service Lines</a></li>
