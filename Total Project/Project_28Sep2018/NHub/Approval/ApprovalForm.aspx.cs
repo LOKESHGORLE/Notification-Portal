@@ -50,7 +50,7 @@ namespace NotificationHub
 
                         Label label3 = new Label();
                         label3.Text = "Accepted";
-                        label3.Width = 400;
+                        label3.Width = 300;
                         PlaceHolder2.Controls.Add(label3);
                         flag = false;
                     }
@@ -86,7 +86,7 @@ namespace NotificationHub
 
                         Label label3 = new Label();
                         label3.Text = "Declined";
-                        label3.Width = 400;
+                        label3.Width = 300;
                         PlaceHolder3.Controls.Add(label3);
                         flag = false;
                     }

@@ -33,12 +33,30 @@
             </td>
         </tr>
         <tr>
-            <td class="modal-sm" style="height: 20px; width: 156px">Confidential Event</td>
-            <td style="height: 20px"></td>
+            <td class="modal-sm" style="height: 44px; width: 156px">Confidential Event</td>
+            <td style="height: 44px">
+
+             
+
+
+
+                <asp:RadioButton ID="CYes" runat="server" GroupName="Confidential" Text="Yes" />
+&nbsp;&nbsp;&nbsp;
+                <asp:RadioButton ID="CNo" runat="server" GroupName="Confidential" Checked="True" Text="No"/>
+
+             
+
+
+
+            </td>
         </tr>
         <tr>
-            <td class="modal-sm" style="width: 156px">Mandatory Event</td>
-            <td>&nbsp;</td>
+            <td class="modal-sm" style="width: 156px; height: 31px;">Mandatory Event</td>
+            <td style="height: 31px">
+                <asp:RadioButton ID="MYes" runat="server" GroupName="Manadatroy" Text="Yes" />
+&nbsp;&nbsp;&nbsp;
+                <asp:RadioButton ID="MNo" runat="server" Checked="True" GroupName="Manadatroy" Text="No" />
+            </td>
         </tr>
         <tr>
             <td class="modal-sm" style="width: 156px">&nbsp;</td>

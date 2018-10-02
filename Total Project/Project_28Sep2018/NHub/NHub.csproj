@@ -197,6 +197,7 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="HomeEventsUpdate.aspx" />
+    <Content Include="NotAuthorized.aspx" />
     <Content Include="Notifications.aspx" />
     <Content Include="SAServiceLines.aspx" />
     <Content Include="SAServiceLinesAdd.aspx" />
@@ -242,6 +243,9 @@
     <Content Include="Source\DeleteSource.aspx" />
     <Content Include="Source\EditSource.aspx" />
     <Content Include="Source\SourceHome.aspx" />
+    <Content Include="TemplateAdd.aspx" />
+    <Content Include="TemplateDelete.aspx" />
+    <Content Include="Templates.aspx" />
     <Content Include="UserAccess\UserAccess.aspx" />
     <Content Include="UserAccess\UserAccessEdit.aspx" />
     <Content Include="UserEvents.aspx" />
@@ -442,6 +446,13 @@
       <DependentUpon>HomeEventsUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="NotAuthorized.aspx.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAuthorized.aspx.designer.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Notifications.aspx.cs">
       <DependentUpon>Notifications.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -570,6 +581,27 @@
       <DependentUpon>SourceHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TemplateAdd.aspx.cs">
+      <DependentUpon>TemplateAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplateAdd.aspx.designer.cs">
+      <DependentUpon>TemplateAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateDelete.aspx.cs">
+      <DependentUpon>TemplateDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TemplateDelete.aspx.designer.cs">
+      <DependentUpon>TemplateDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates.aspx.cs">
+      <DependentUpon>Templates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates.aspx.designer.cs">
+      <DependentUpon>Templates.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserAccess\UserAccess.aspx.cs">
       <DependentUpon>UserAccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

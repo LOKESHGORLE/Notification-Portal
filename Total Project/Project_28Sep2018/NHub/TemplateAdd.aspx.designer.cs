@@ -7,171 +7,198 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NHub {
+namespace Nhub {
     
     
-    public partial class EditNotifications {
+    public partial class TemplateAdd {
         
         /// <summary>
-        /// SourceName control.
+        /// SLlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SourceName;
+        protected global::System.Web.UI.WebControls.Label SLlbl;
         
         /// <summary>
-        /// TextBox1 control.
+        /// ServiceLineDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList ServiceLineDDL;
         
         /// <summary>
-        /// CheckBoxIntranet control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxIntranet;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// CheckBoxEmails control.
+        /// Notlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxEmails;
+        protected global::System.Web.UI.WebControls.Label Notlbl;
         
         /// <summary>
-        /// CheckboxUnabot control.
+        /// NotificationDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckboxUnabot;
+        protected global::System.Web.UI.WebControls.DropDownList NotificationDDL;
         
         /// <summary>
-        /// CheckboxSMS control.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckboxSMS;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
         
         /// <summary>
-        /// CYes control.
+        /// TempNamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton CYes;
+        protected global::System.Web.UI.WebControls.Label TempNamelbl;
         
         /// <summary>
-        /// CNo control.
+        /// TemplateName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton CNo;
+        protected global::System.Web.UI.WebControls.TextBox TemplateName;
         
         /// <summary>
-        /// MYes control.
+        /// MElbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton MYes;
+        protected global::System.Web.UI.WebControls.Label MElbl;
         
         /// <summary>
-        /// MNo control.
+        /// MandatoryEventRDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton MNo;
+        protected global::System.Web.UI.WebControls.RadioButtonList MandatoryEventRDL;
         
         /// <summary>
-        /// TextBox2 control.
+        /// Schnlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.Label Schnlbl;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ChannelDDL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ChannelDDL;
         
         /// <summary>
-        /// TextBox3 control.
+        /// SqlDataSource4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
         
         /// <summary>
-        /// TextBox4 control.
+        /// URL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox URL;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// Upload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Button Upload;
         
         /// <summary>
-        /// TextBox5 control.
+        /// uploadlbltxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.Label uploadlbltxt;
         
         /// <summary>
-        /// ButtonCancel control.
+        /// Uploadsucces control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancel;
+        protected global::System.Web.UI.WebControls.Label Uploadsucces;
         
         /// <summary>
-        /// ButtonUpdateEvent control.
+        /// CreateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonUpdateEvent;
+        protected global::System.Web.UI.WebControls.Button CreateBtn;
+        
+        /// <summary>
+        /// createlbltxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label createlbltxt;
+        
+        /// <summary>
+        /// CancelBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelBtn;
+        
+        /// <summary>
+        /// Templatehome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink Templatehome;
     }
 }
