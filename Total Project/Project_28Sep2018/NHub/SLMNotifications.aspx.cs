@@ -67,6 +67,7 @@ namespace NHub
                             TC2.Controls.Add(EditLink);
                             //PH[count].Controls.Add(new LiteralControl("&nbsp;"));
                             TC3.Controls.Add(SubscribeLink);
+                             
                         TR.Cells.Add(TC1);
                         TR.Cells.Add(TC2);
                         TR.Cells.Add(TC3);

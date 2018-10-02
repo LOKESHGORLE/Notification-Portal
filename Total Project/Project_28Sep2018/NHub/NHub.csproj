@@ -198,6 +198,10 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="HomeEventsUpdate.aspx" />
     <Content Include="Notifications.aspx" />
+    <Content Include="SAServiceLines.aspx" />
+    <Content Include="SAServiceLinesAdd.aspx" />
+    <Content Include="SAServiceLinesDelete.aspx" />
+    <Content Include="SAServiceLinesEdit.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -230,6 +234,8 @@
     <Content Include="SLM Notifications\SLMNotifications.aspx" />
     <Content Include="SLMEditNotifications.aspx" />
     <Content Include="SLMNotifications.aspx" />
+    <Content Include="SLMServiceLines.aspx" />
+    <Content Include="SLMServiceLinesEdit.aspx" />
     <Content Include="SLMSubscribeNotifications.aspx" />
     <Content Include="Sources.aspx" />
     <Content Include="Source\AddSource.aspx" />
@@ -444,6 +450,34 @@
       <DependentUpon>Notifications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAServiceLines.aspx.cs">
+      <DependentUpon>SAServiceLines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAServiceLines.aspx.designer.cs">
+      <DependentUpon>SAServiceLines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAServiceLinesAdd.aspx.cs">
+      <DependentUpon>SAServiceLinesAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAServiceLinesAdd.aspx.designer.cs">
+      <DependentUpon>SAServiceLinesAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAServiceLinesDelete.aspx.cs">
+      <DependentUpon>SAServiceLinesDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAServiceLinesDelete.aspx.designer.cs">
+      <DependentUpon>SAServiceLinesDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SAServiceLinesEdit.aspx.cs">
+      <DependentUpon>SAServiceLinesEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SAServiceLinesEdit.aspx.designer.cs">
+      <DependentUpon>SAServiceLinesEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -478,6 +512,20 @@
     </Compile>
     <Compile Include="SLMNotifications.aspx.designer.cs">
       <DependentUpon>SLMNotifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLMServiceLines.aspx.cs">
+      <DependentUpon>SLMServiceLines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLMServiceLines.aspx.designer.cs">
+      <DependentUpon>SLMServiceLines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLMServiceLinesEdit.aspx.cs">
+      <DependentUpon>SLMServiceLinesEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLMServiceLinesEdit.aspx.designer.cs">
+      <DependentUpon>SLMServiceLinesEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="SLMSubscribeNotifications.aspx.cs">
       <DependentUpon>SLMSubscribeNotifications.aspx</DependentUpon>
