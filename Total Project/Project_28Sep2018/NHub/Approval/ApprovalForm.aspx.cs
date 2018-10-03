@@ -50,7 +50,7 @@ namespace NotificationHub
 
                         Label label3 = new Label();
                         label3.Text = "Accepted";
-                        label3.Width = 300;
+                        label3.Width = 500;
                         PlaceHolder2.Controls.Add(label3);
                         flag = false;
                     }
@@ -86,7 +86,7 @@ namespace NotificationHub
 
                         Label label3 = new Label();
                         label3.Text = "Declined";
-                        label3.Width = 300;
+                        label3.Width = 500;
                         PlaceHolder3.Controls.Add(label3);
                         flag = false;
                     }
@@ -132,7 +132,7 @@ namespace NotificationHub
 
                 HyperLink hyper1 = new HyperLink();
                 hyper1.Text = "Decline";
-                hyper1.Width = 400;
+                hyper1.Width = 500;
                 hyper1.NavigateUrl = ("~/Approval/DeclineTemplate.aspx?id=" + Convert.ToString(repo.templateslist[count].Id));
                 PlaceHolder1.Controls.Add(hyper1);
 
