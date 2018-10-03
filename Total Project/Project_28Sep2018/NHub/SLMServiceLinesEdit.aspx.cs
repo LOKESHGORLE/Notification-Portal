@@ -24,7 +24,9 @@ namespace Project_28Sep2018
                 string ServLineName = Request.QueryString["ServLineName"];
                 //OMCheckList.Text = ServLineName;
                 string ServLineId = Request.QueryString["ID"];
-                
+                int ServLineId1 = Convert.ToInt32(Request.QueryString["ID"]);
+                ServiceLineRepository SLrepo = new ServiceLineRepository();
+
                 SLMServiceLine SlMRepo = new SLMServiceLine();
                 SlMRepo.getServLineOMDetails(ServLineId);
                 SlMRepo.getAllOMDetails();
@@ -39,6 +41,10 @@ namespace Project_28Sep2018
                 for (int i = 0; i < OMCheckList.Items.Count; i++)
                 {
                     OMCheckList.Items[i].Selected = true;
+                    string OmId = OMCheckList.Items[i].Value;
+                    SLrepo.EditServiceLineOMwhileload(ServLineId1, OmId);
+
+
                 }
 
                 //OMCheckList1.DataSource = SlMRepo.ServLineOMList;
@@ -47,7 +53,8 @@ namespace Project_28Sep2018
 
                 //OMCheckList1.DataBind();
 
-                CheckBoxList2.DataSource = SlMRepo.getAllOMDetailsOfServiceLineManagers(ServLineId);
+                //CheckBoxList2.DataSource = SlMRepo.getAllOMDetailsOfServiceLineManagers(ServLineId);
+                CheckBoxList2.DataSource = SlMRepo.ServLineOMList;
                 CheckBoxList2.DataTextField = "UserName";
                 CheckBoxList2.DataValueField = "Id";
 
@@ -62,6 +69,8 @@ namespace Project_28Sep2018
 
         protected void update_Click(object sender, EventArgs e)
         {
+           
+            
             int ServLineId = Convert.ToInt32(Request.QueryString["ID"]);
             string OMIds = "";
             ServiceLineRepository SLrepo = new ServiceLineRepository();
@@ -75,23 +84,29 @@ namespace Project_28Sep2018
                 }
             }
 
-            for (int SLMcount = 0; SLMcount < OMCheckList1.Items.Count; SLMcount++)
+            for (int SLMcount = 0; SLMcount < CheckBoxList2.Items.Count; SLMcount++)
             {
-                if (OMCheckList1.Items[SLMcount].Selected)
+                if (CheckBoxList2.Items[SLMcount].Selected)
                 {
-                    OMIds = OMIds + OMCheckList1.Items[SLMcount].Value + ",";
+                    OMIds = OMIds + CheckBoxList2.Items[SLMcount].Value + ",";
                 }
             }
 
 
-
-            OMIds = OMIds.Substring(0, OMIds.Length - 1);
-
-
-           // SLrepo.EditServiceLine(ServLineId, OMIds);
-            SLrepo.UpdateAfterDeleteServiceLine(ServLineId, OMIds);
-
-            Response.Redirect("~/SLMServiceLines.aspx");
+            if (OMIds.Length > 0)
+            {
+                OMIds = OMIds.Substring(0, OMIds.Length - 1);
+                SLrepo.UpdateAfterDeleteServiceLine(ServLineId, OMIds);
+                Response.Redirect("~/SLMServiceLines.aspx");
+            }
+            else
+            {
+                Label1.Text = "Please Select atleast one operartional manager";
+            }
+            //SLrepo.EditServiceLine(ServLineId, OMIds);
+ 
+           
+            
         }
     }
 }

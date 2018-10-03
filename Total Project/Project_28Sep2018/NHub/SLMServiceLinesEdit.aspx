@@ -35,6 +35,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="update" runat="server" BackColor="#99CCFF" Font-Bold="True" Height="30px" OnClick="update_Click" Text="Update" ToolTip="click to update" Width="80px" />
 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
     </p>
     <p>
     </p>

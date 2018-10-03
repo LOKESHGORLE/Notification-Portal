@@ -45,7 +45,7 @@ namespace DAL.Repository
             {
                 connection.ConnectionString = @"Data Source=.;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
-                string sql = "select u.id,u.UserName from ServiceLineManager sm, AspNetUsers u where  sm.UserId=u.Id and ServiceLineId=" + pServLineId;
+                string sql = "select u.id,u.UserName from ServiceLineManager sm, AspNetUsers u where  sm.UserId=u.Id  and sm.Isactive=1 and ServiceLineId=" + pServLineId;
                 adapter = new SqlDataAdapter(sql, connection);
                 //SqlCommand sqlCommand = new SqlCommand(sql, connection);
                 adapter.Fill(ServLineManTab);
@@ -171,7 +171,7 @@ namespace DAL.Repository
                 {
 
 
-                    SqlCommand sqlCommand1 = new SqlCommand("Proc_InsertServLineManagers", connection);
+                    SqlCommand sqlCommand1 = new SqlCommand("Proc_InsertServLineOpManagers", connection);
                     sqlCommand1.CommandType = CommandType.StoredProcedure;
                     //sqlCommand1.Parameters.Add("@pId", SqlDbType.Int).Value =pId;
                     sqlCommand1.Parameters.Add("@pServiceLineId", SqlDbType.Int).Value = pServLineId;
@@ -185,7 +185,8 @@ namespace DAL.Repository
             }
 
         }
-        public void EditServiceLineOM(int pServLineId, string pOMids)
+
+        public void EditServiceLineOMwhileload(int pServLineId, string pOMids)
         {
             using (SqlConnection connection = new SqlConnection())
             {
@@ -206,15 +207,25 @@ namespace DAL.Repository
                     Direction = ParameterDirection.Input
                 };
                 sqlCommand.Parameters.Add(parServiceLineId);
+                sqlCommand.Parameters.Add("@pUserId", SqlDbType.NVarChar).Value = pOMids;
                 sqlCommand.ExecuteNonQuery();
+            }
+        }
 
+                public void EditServiceLineOM(int pServLineId, string pOMids)
+        {
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = @"Data Source=.;Initial Catalog=NotificationHub;Integrated Security=True";
+                connection.Open();
+                
                 string[] Slm = pOMids.Split(',');
                 var Slm1 = Slm.Distinct();
                 foreach (string slms in Slm1)
                 {
 
 
-                    SqlCommand sqlCommand1 = new SqlCommand("Proc_InsertServLineManagers", connection);
+                    SqlCommand sqlCommand1 = new SqlCommand("Proc_EditServLineOpManagers", connection);
                     sqlCommand1.CommandType = CommandType.StoredProcedure;
                     //sqlCommand1.Parameters.Add("@pId", SqlDbType.Int).Value =pId;
                     sqlCommand1.Parameters.Add("@pServiceLineId", SqlDbType.Int).Value = pServLineId;
@@ -302,7 +313,7 @@ namespace DAL.Repository
             {
                 connection.ConnectionString = @"Data Source=.;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
-                string sql = "select u.UserName,u.Id from OperationManager o,ServiceLine s,AspNetUsers u where u.Id = o.OperationManagerId and o.ServicelineId =" + pServLineId;
+                string sql = "select u.UserName,u.Id from OperationManager o,ServiceLine s,AspNetUsers u where u.Id = o.OperationManagerId and o.Isactive=1 and o.ServicelineId =" + pServLineId;
                 adapter = new SqlDataAdapter(sql, connection);
                 //SqlCommand sqlCommand = new SqlCommand(sql, connection);
                 adapter.Fill(ServLineOMTab);
