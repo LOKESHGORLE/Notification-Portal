@@ -313,7 +313,7 @@ namespace DAL.Repository
             {
                 connection.ConnectionString = @"Data Source=.;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
-                string sql = "select u.UserName,u.Id from OperationManager o,ServiceLine s,AspNetUsers u where u.Id = o.OperationManagerId and o.Isactive=1 and o.ServicelineId =" + pServLineId;
+                string sql = "select u.UserName,u.Id from OperationManager o,ServiceLine s,AspNetUsers u where u.Id = o.OperationManagerId and o.Isactive=1 and o.ServicelineId=s.Id and o.ServicelineId =" + pServLineId;
                 adapter = new SqlDataAdapter(sql, connection);
                 //SqlCommand sqlCommand = new SqlCommand(sql, connection);
                 adapter.Fill(ServLineOMTab);
