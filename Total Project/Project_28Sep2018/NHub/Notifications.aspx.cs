@@ -17,15 +17,15 @@ namespace NHub
         DALnotifications  Obj= new DALnotifications();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             List<ClassSources> ListOfSources = new List<ClassSources>();
             ListOfSources = Obj.GetSourceData();
             NoOfSources = ListOfSources.Count;
             List<ClassEvents> ListOfEvents = new List<ClassEvents>();
 
-           LB = new Label[NoOfSources];
-           PH = new PlaceHolder[NoOfSources];
-           
+            LB = new Label[NoOfSources];
+            PH = new PlaceHolder[NoOfSources];
+
             if (!IsPostBack)
             {
                 for (int count = 0; count < NoOfSources; count++)
@@ -35,11 +35,11 @@ namespace NHub
                     LB[count].ForeColor = System.Drawing.Color.Blue;
 
                     LB[count].Text = ListOfSources[count].SName;
-                    
 
+                    //1LB[count].OnClientClick
                     LB[count].ID = ListOfSources[count].Sid.ToString();
                     PH[count].ID = ListOfSources[count].Sid.ToString();
-
+                    //LB[count].Cli
 
                     ListOfEvents = Obj.GetEventsData(ListOfSources[count].Sid);
                     foreach (ClassEvents Event in ListOfEvents)
@@ -53,8 +53,8 @@ namespace NHub
                         DeleteLink.Text = "Delete";
                         EditLink.Text = "Edit";
                         EditLink.ID = Event.Eid.ToString();
-                        DeleteLink.ID= Event.Eid.ToString();
-                        EditLink.NavigateUrl = "~/EditNotifications.aspx?id="+Event.Eid;
+                        DeleteLink.ID = Event.Eid.ToString();
+                        EditLink.NavigateUrl = "~/EditNotifications.aspx?id=" + Event.Eid;
                         DeleteLink.NavigateUrl = "~/DeleteNotifications.aspx?id=" + Event.Eid;
                         PH[count].Controls.Add(L);
                         PH[count].Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp"));
@@ -68,8 +68,8 @@ namespace NHub
                     NotificationsBody.Controls.Add(new LiteralControl("<br/>"));
                 }
             }
-            
 
+        }
 
             //foreach (ClassSources sou in ListOfSources)
             //{
@@ -99,7 +99,7 @@ namespace NHub
             //    NotificationsBody.Controls.Add(PH);
                 
             //}
-        }
+        
 
         protected void Button1_Click(object sender, EventArgs e)
         {
