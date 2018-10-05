@@ -64,7 +64,7 @@ namespace NHub
 
         protected void Unsubscribe_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/UserEvents.aspx");
         }
     }
 }

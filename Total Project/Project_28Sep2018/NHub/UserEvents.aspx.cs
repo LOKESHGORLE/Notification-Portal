@@ -23,6 +23,25 @@ namespace NHub
 
 
             TableRow TabRow = new TableRow();
+            TableCell CellH1 = new TableCell();
+            CellH1.Controls.Add(new LiteralControl("Event"));
+            CellH1.Width = 150;
+            CellH1.ForeColor = System.Drawing.Color.DarkRed;
+            TableCell Cellh2 = new TableCell();
+
+            Cellh2.Controls.Add(new LiteralControl("SubScribe"));
+            Cellh2.Width = 150;
+            Cellh2.ForeColor = System.Drawing.Color.DarkRed;
+            TableCell Cellh3 = new TableCell();
+
+            Cellh3.Controls.Add(new LiteralControl("Unsubscribe"));
+            Cellh3.Width = 150;
+            Cellh3.ForeColor = System.Drawing.Color.DarkRed;
+            TabRow.Cells.Add(CellH1);
+            TabRow.Cells.Add(Cellh2);
+            TabRow.Cells.Add(Cellh3);
+            //Tr.Cells.Add(Cell4);
+            DisplayTable.Rows.Add(TabRow);
 
             CheckBoxList ckl = new CheckBoxList();
             foreach (DataRow data in uh.UserEventsTab.Tables[1].Rows)

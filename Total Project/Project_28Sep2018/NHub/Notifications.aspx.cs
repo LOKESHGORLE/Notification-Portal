@@ -59,7 +59,7 @@ namespace NHub
                         PH[count].Controls.Add(L);
                         PH[count].Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp"));
                         PH[count].Controls.Add(EditLink);
-                        PH[count].Controls.Add(new LiteralControl("&nbsp;"));
+                        PH[count].Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;"));
                         PH[count].Controls.Add(DeleteLink);
                     }
                     //LB[count].Command += LinkButtonClick;

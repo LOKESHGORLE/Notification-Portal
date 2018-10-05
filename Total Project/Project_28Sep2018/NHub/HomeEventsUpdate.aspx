@@ -3,17 +3,20 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div class="auto-style1">
 
-            <asp:Label ID="HintMsg" runat="server" Text="Select Channel"></asp:Label>
-            <br />
-
-            <asp:CheckBoxList ID="ChannelCheckBoxList" runat="server"></asp:CheckBoxList>
+            
+            <br />   <br />   <br />   <br />
+            
+           
             <%if (Request.QueryString["Act"] == "Sub")
                 { %>
-            <asp:Label ID="ConfirmMsg" runat="server" Text="ConfirmMsg"></asp:Label> <br /> <br /> <br /> <br />
+            <asp:Label ID="HintMsg" runat="server" Text="Select Channel"></asp:Label>
+             <asp:CheckBoxList ID="ChannelCheckBoxList" runat="server"></asp:CheckBoxList>
+             <br /> <br /> <br /> <br />
             
-            <%}
-          if (Request.QueryString["Act"] == "UnSub"){%>
-            <asp:Label ID="UnSubMsg" runat="server" Text="Label"></asp:Label><br /> <br /> <br /> <br />
+            <%}%>
+            <asp:Label ID="ConfirmMsg" runat="server" Text="ConfirmMsg"></asp:Label>
+          <%if (Request.QueryString["Act"] == "UnSub"){%>
+            <asp:Label ID="UnSubMsg" runat="server"></asp:Label><br /> <br /> <br /> <br />
             
             <%}%><br />
              <%if (Request.QueryString["Act"] == "Sub")

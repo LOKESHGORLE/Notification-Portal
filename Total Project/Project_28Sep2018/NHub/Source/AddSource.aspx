@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddSource.aspx.cs" Inherits="NotificationHub.AddSource" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="AddSource.aspx.cs" Inherits="NotificationHub.AddSource" %>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -39,32 +39,46 @@
     <h2 style="align-content:center">&nbsp;</h2>
     <form id="form1" runat="server">
         
-         <h3>
+         <h3>--%>
              <table class="auto-style1">
                  <tr>
-                     <td class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADD SOURCE</td>
+                     <td class="auto-style9" style="font-style:oblique">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADD SOURCE</td>
                      <td class="auto-style10"></td>
                  </tr>
+                 
                  <tr>
                      <td class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAME :&nbsp;</td>
                      <td class="auto-style6">   <asp:TextBox ID="TextBox1" runat="server" Style="float:inherit" Font-Size="Large"></asp:TextBox>
              <asp:Label ID="Label1" runat="server" Visible="False" ForeColor="#ff0000"></asp:Label>
                      </td>
                  </tr>
+                 
                  <tr>
-                     <td class="auto-style7">
+                     <td class="auto-style7" style="text-align: center">
 
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
+                         <br />
+                         <br />
+                         <br />
+
+
         <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" Font-Size="Large" OnDataBinding="Page_Load" />    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    </td>
-                     <td class="auto-style8">    <asp:Button ID="Button2" runat="server" Text="Create" OnClick="Button2_Click" Font-Size="Large" OnDataBinding="Button2_Click"/>
+                     <td class="auto-style8">    
+                         <br />
+                         <br />
+                         <br />
+                         <asp:Button ID="Button2" runat="server" Text="Create" OnClick="Button2_Click" Font-Size="Large" OnDataBinding="Button2_Click"/>
         
                      </td>
                  </tr>
+                   <br />
+                 <br />
              </table>
-&nbsp;<br />
+   </asp:Content>
+<%--&nbsp;<br />
         <br />
         <br />
 
@@ -75,4 +89,4 @@
     </form>
          
 </body>
-</html>
+</html>--%>

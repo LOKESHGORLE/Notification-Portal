@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteSource.aspx.cs" Inherits="NotificationHub.DeleteSource" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DeleteSource.aspx.cs" Inherits="NotificationHub.DeleteSource" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<%--<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -28,10 +29,10 @@
     </style>
 </head>
 <body style="background-color:tan">
-    <form id="form1" runat="server">
-        <div>
+    <form id="form1" runat="server">--%>
+      <%--  <div>
 
-        </div>
+        </div>--%>
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
@@ -54,6 +55,7 @@
                 <td class="auto-style4"></td>
             </tr>
         </table>
-    </form>
+<%--    </form>
 </body>
-</html>
+</html>--%>
+    </asp:Content>

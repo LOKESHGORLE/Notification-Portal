@@ -55,6 +55,8 @@ namespace NHub
                         TableCell TC1 = new TableCell();
                         TableCell TC2 = new TableCell();
                         TableCell TC3 = new TableCell();
+                        TableCell TC4 = new TableCell();
+                        TableCell TC5 = new TableCell();
                         L.Text = Event.Ename;
                             SubscribeLink.Text = "Subscribe";
                             EditLink.Text = "Edit";
@@ -67,10 +69,14 @@ namespace NHub
                             TC2.Controls.Add(EditLink);
                             //PH[count].Controls.Add(new LiteralControl("&nbsp;"));
                             TC3.Controls.Add(SubscribeLink);
-                             
+                        TC4.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp"));
+                        TC5.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp"));
+
                         TR.Cells.Add(TC1);
+                        TR.Cells.Add(TC5);
                         TR.Cells.Add(TC2);
                         TR.Cells.Add(TC3);
+                        TR.Cells.Add(TC4);
                         T.Rows.Add(TR);
                         }
                     PH[count].Controls.Add(T);

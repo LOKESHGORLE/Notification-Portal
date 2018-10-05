@@ -11,24 +11,28 @@ namespace NHubDAL.Repository
 {
     public class ChannelRepository
     {
-        SqlConnection DefaultConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString.ToString());
+
+        SqlConnection DefaultConnection;
         public List<Channel> GetChannel()
         {
             List<Channel> ChannelList = new List<Channel>();
-            DefaultConnection.Open();
-            string sql = "Select * From Channel";
-            SqlCommand myCommand = new SqlCommand(sql, DefaultConnection);
-            Channel b;
-            using (SqlDataReader dr = myCommand.ExecuteReader())
+            using (DefaultConnection = new SqlConnection(Utilities.CONNECTIONSTRING))
             {
-                while (dr.Read())
+                string sql = "Select * From Channel"; //Avoid select stmts, instead use procs
+                SqlCommand myCommand = new SqlCommand(sql, DefaultConnection);
+                Channel b;
+
+                using (SqlDataReader dr = myCommand.ExecuteReader())
                 {
-                    b = new Channel
+                    while (dr.Read())
                     {
-                        ChannelId = Convert.ToInt32(dr["Id"].ToString()),
-                        ChannelName = dr["Name"].ToString()
-                    };
-                    ChannelList.Add(b);
+                        b = new Channel
+                        {
+                            ChannelId = Convert.ToInt32(dr["Id"].ToString()),
+                            ChannelName = dr["Name"].ToString()
+                        };
+                        ChannelList.Add(b);
+                    }
                 }
             }
             return ChannelList;

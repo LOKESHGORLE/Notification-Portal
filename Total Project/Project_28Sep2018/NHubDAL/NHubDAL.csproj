@@ -68,6 +68,7 @@
     <Compile Include="SourceAndApproval\SourecDal.cs" />
     <Compile Include="SourceAndApproval\TemplateAccess.cs" />
     <Compile Include="Users\UserHomeEvents.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
